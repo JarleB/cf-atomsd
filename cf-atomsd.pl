@@ -19,7 +19,7 @@ while (1) {
 
 
 my $privkey_passphrase = 'Cfengine passphrase';
-my $f_privkey = '/home/nornetpp/.cfagent/ppkeys/localhost.priv';
+my $f_privkey = '/home/jarle/.cfagent/ppkeys/localhost.priv';
 # The private key is in PEM format with a _very_ secret passphrase
 my $priv_key_stripped = `openssl rsa -inform PEM -in $f_privkey -passin pass:"$privkey_passphrase" 2>/dev/null`;
 
@@ -29,7 +29,7 @@ my $privkey = Crypt::OpenSSL::RSA->new_private_key(
              );
 # Make public key object based on pubkey file directly. 
 my $pubkey = Crypt::OpenSSL::RSA->new_public_key(
-             readfile('/home/nornetpp/.cfagent/ppkeys/localhost.pub')
+             readfile('/home/jarle/.cfagent/ppkeys/localhost.pub')
              );
 
 
